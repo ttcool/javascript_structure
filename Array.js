@@ -211,3 +211,80 @@ else {
         console.log("no numbers are even")
 }
 
+
+//reduce() 方法接受一个函数,返回一个值。
+//该方法会从一个累加值开始,不断对累加值和数组中的后续元素调用该函数,直到数组中的最后一个元素,最后返回得到的累加值。
+function add(runningTotal, currentValue) {
+        return runningTotal + currentValue
+}
+var nums = [1,2,3,4,5,6,7,8,9,10]
+var sum = nums.reduce(add)
+console.log(sum)
+// 显示 55
+
+//生成新数组方法
+function curve(grade) {
+        return grade += 5
+}
+var grades = [77, 65, 81, 92, 83]
+var newgrades = grades.map(curve)
+console.log(newgrades)
+// 82, 70, 86, 97, 88
+
+function first(word) {
+        return word[0]
+}
+var words = ["for","your","information"]
+var acronym = words.map(first)
+console.log(acronym.join(""))
+// 显示 "fyi"
+
+function isEven(num) {
+     return num % 2 == 0
+      }
+
+function isOdd(num) {
+     return num % 2 != 0
+}
+
+var nums = []
+      
+for (var i = 0; i < 20; ++i) {
+         nums[i] = i+1
+      }
+      
+var evens = nums.filter(isEven)
+console.log("Even numbers: ")
+console.log(evens)
+
+var odds = nums.filter(isOdd)
+console.log("Odd numbers: ")
+console.log(odds)
+
+
+function passing(num) {
+         return num >= 60
+}
+
+var grades = []
+
+for (var i = 0; i < 20; ++i) {
+    grades[i] = Math.floor(Math.random() * 101)
+    }
+var passGrades = grades.filter(passing)
+console.log("All grades: )
+console.log(grades)
+console.log("Passing grades: ")
+console.log(passGrades)
+
+function afterc(str) {
+    if (str.indexOf("cie") > -1) {
+           return true
+}
+        return false;
+ }
+var words = ["recieve","deceive","percieve","deceit","concieve"]
+var misspelled = words.filter(afterc)
+console.log(misspelled)
+// 显示 recieve,percieve,concieve
+
