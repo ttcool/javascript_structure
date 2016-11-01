@@ -119,3 +119,95 @@ nums = [3,4,5]
 nums.unshift(newnum,1,2)
 console.log(nums)
 // 1,2,3,4,5
+
+var nums = [1,2,3,4,5,9]
+nums.pop()
+console.log(nums)
+
+var nums = [9,1,2,3,4,5]
+nums.shift()
+console.log(nums)
+// 1,2,3,4,5
+
+//pop() 和 shift() 方法都将删掉的元素作为方法的 返回值返回,因此可以使用一个变量来保存删除的元素:
+var nums = [6,1,2,3,4,5]
+var first = nums.shift()
+// first gets the value 6 
+nums.push(first)
+console.log(nums)
+// 1,2,3,4,5,6
+
+var nums = [1,2,3,7,8,9]
+var newElements = [4,5,6]
+nums.splice(3,0,newElements)
+console.log(nums)
+// 1,2,3,4,5,6,7,8,9
+
+var nums = [1,2,3,100,200,300,400,4,5]
+nums.splice(3,4)
+console.log(nums)
+// 1,2,3,4,5
+
+//数组排序
+var nums = [1,2,3,4,5]
+nums.reverse()
+console.log(nums)
+// 5,4,3,2,1
+
+//sort()按字典排序
+var names = ["David","Mike","Cynthia","Clayton","Bryan","Raymond"]
+names.sort()
+console.log(names)
+// Bryan,Clayton,Cynthia,David,Mike,Raymond
+
+//数字类型排序需传入比较函数
+function compare(num1, num2) {
+        return num1 - num2
+}
+var nums = [3,1,2,100,4,200]
+nums.sort(compare)
+console.log(nums)
+// 1,2,3,4,100,200
+
+//迭代器方法
+function square(num) {
+        console.log(num, num * num)
+}
+var nums = [1,2,3,4,5,6,7,8,9,10]
+nums.forEach(square)
+
+//另一个迭代器方法是 every(),该方法接受一个返回值为布尔类型的函数,对数组中的每个元素使用该函数
+function isEven(num) {
+        return num % 2 == 0;
+}
+     var nums = [2,4,6,8,10];
+     var even = nums.every(isEven);
+     if (even) {
+        console.log("all numbers are even");
+     }
+     else {
+        console.log("not all numbers are even");
+}
+
+//some() 方法也接受一个返回值为布尔类型的函数,只要有一个元素使得该函数返回 true,该方法就返回 true
+function isEven(num) {
+        return num % 2 == 0
+}
+var nums = [1,2,3,4,5,6,7,8,9,10]
+var someEven = nums.some(isEven)
+
+if (someEven) {
+        console.log("some numbers are even")
+}
+else {
+        console.log("no numbers are even")
+     }
+     nums = [1,3,5,7,9];
+     someEven = nums.some(isEven)
+     if (someEven) {
+        console.log("some numbers are even")
+     }
+     else {
+        console.log("no numbers are even")
+}
+
